@@ -199,8 +199,8 @@ static cell_t sm_UserHasLicenseForApp(IPluginContext *pContext, const cell_t *pa
 		return k_EUserHasLicenseResultNoAuth;
 	}
 	
-	int client = gamehelpers->ReferenceToIndex(params[1]);
-	IGamePlayer *pPlayer = playerhelpers->GetGamePlayer(client); /* Man, including GameHelpers and PlayerHelpers for this native :(. */
+	int client = params[1];
+	IGamePlayer *pPlayer = playerhelpers->GetGamePlayer(client);
 	if (pPlayer == NULL || pPlayer->IsConnected() == false)
 	{
 		return pContext->ThrowNativeError("Client index %d is invalid", params[1]);
@@ -225,7 +225,7 @@ static cell_t sm_UserHasLicenseForAppId(IPluginContext *pContext, const cell_t *
 
 static cell_t sm_GetClientSteamID(IPluginContext *pContext, const cell_t *params)
 {
-	int client = gamehelpers->ReferenceToIndex(params[1]);
+	int client = params[1];
 	IGamePlayer *pPlayer = playerhelpers->GetGamePlayer(client);
 
 	if (pPlayer == NULL || pPlayer->IsConnected() == false)

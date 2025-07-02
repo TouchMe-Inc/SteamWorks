@@ -335,6 +335,11 @@ SMM_API void *PL_EXPOSURE(const char *name, int *code)
 	return NULL;
 }
 
+/** Exposes the extension to Metamod */
+ISmmPlugin *SDKExtension::SDK_OnMetamodCreateInterface(const MetamodVersionInfo *mvi, const MetamodLoaderInfo *mli) {
+    return this;
+}
+
 bool SDKExtension::Load(PluginId id, ISmmAPI *ismm, char *error, size_t maxlen, bool late)
 {
 	PLUGIN_SAVEVARS();

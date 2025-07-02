@@ -78,7 +78,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;..\sdk;$(MMSOURCE110)\core;$(MMSOURCE110)\core\sourcehook;$(SOURCEMOD15)\public;$(SOURCEMOD15)\public\sourcepawn;$(HL2SDK2013)\public;$(HL2SDK2013)\public\tier0;$(HL2SDK2013)\public\tier1;$(STEAMWORKS_SDK)\public\steam;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\sdk;$(MMSOURCE112)\core;$(MMSOURCE112)\core\sourcehook;$(SOURCEMOD15)\public;$(SOURCEMOD15)\public\sourcepawn;$(HL2SDK2013)\public;$(HL2SDK2013)\public\tier0;$(HL2SDK2013)\public\tier1;$(STEAMWORKS_SDK)\public\steam;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;VERSION_SAFE_STEAM_API_INTERFACES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -105,7 +105,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
       <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
-      <AdditionalIncludeDirectories>..;..\sdk;$(MMSOURCE110)\core;$(MMSOURCE110)\core\sourcehook;$(SOURCEMOD15)\public;$(SOURCEMOD15)\public\sourcepawn;$(HL2SDK2013)\public;$(HL2SDK2013)\public\tier0;$(HL2SDK2013)\public\tier1;$(STEAMWORKS_SDK)\public\steam;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..;..\sdk;$(MMSOURCE112)\core;$(MMSOURCE112)\core\sourcehook;$(SOURCEMOD15)\public;$(SOURCEMOD15)\public\sourcepawn;$(HL2SDK2013)\public;$(HL2SDK2013)\public\tier0;$(HL2SDK2013)\public\tier1;$(STEAMWORKS_SDK)\public\steam;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;SDK_EXPORTS;_CRT_SECURE_NO_DEPRECATE;SOURCEMOD_BUILD;VERSION_SAFE_STEAM_API_INTERFACES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>

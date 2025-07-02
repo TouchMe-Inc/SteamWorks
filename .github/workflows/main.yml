@@ -20,9 +20,9 @@ jobs:
       fail-fast: false
       matrix:
         python-version: [3.8]
-        os: [ ubuntu-18.04, windows-latest, macos-latest ]
+        os: [ ubuntu-22.04, windows-latest]
         include:
-        - os: ubuntu-18.04
+        - os: ubuntu-22.04
           asset_name: 'package-linux'
           zip_cmd: 'zip -r package.zip build/package' 
           CC: 'clang'
@@ -31,12 +31,6 @@ jobs:
         - os: windows-latest
           asset_name: 'package-windows'
           zip_cmd: 'powershell Compress-Archive build/package package.zip'           
-
-        - os: macos-latest
-          asset_name: 'package-macos'
-          zip_cmd: 'zip -r package.zip build/package'           
-          CC: 'clang'
-          CXX: 'clang'
     steps:
     - uses: actions/checkout@v2
       with:
@@ -69,7 +63,7 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'alliedmodders/sourcemod'
-        ref: '1.10-dev'
+        ref: '1.12-dev'
         path: 'sourcemod'
         submodules: 'recursive'
     - name: Checkout HL2 SDK
@@ -82,14 +76,12 @@ jobs:
       uses: actions/checkout@v2
       with:
         repository: 'alliedmodders/metamod-source'
-        ref: '1.10-dev'
+        ref: '1.12-dev'
         path: 'mmsource'        
     - name: Checkout Steam Works
       uses: actions/checkout@v2
       with:
-       ssh-key: ${{ secrets.STEAMWORKS_PULL_KEY }}
-       repository: 'hexa-core-eu/SteamWorksSDK'
-       ref: '1.55'
+       repository: 'TouchMe-Inc/SteamworksSDK'
        path: 'steamworks-sdk'
     - name: Run Build
       shell: bash

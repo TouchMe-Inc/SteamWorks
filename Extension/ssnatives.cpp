@@ -60,8 +60,10 @@ static cell_t sm_RequestUserStats(IPluginContext *pContext, const cell_t *params
 		return 0;
 	}
 
-	int client = gamehelpers->ReferenceToIndex(params[1]);
-	IGamePlayer *pPlayer = playerhelpers->GetGamePlayer(client); /* Man, including GameHelpers and PlayerHelpers for this native :(. */
+	int client = params[1];
+
+	IGamePlayer *pPlayer = playerhelpers->GetGamePlayer(client);
+
 	if (pPlayer == NULL || pPlayer->IsConnected() == false)
 	{
 		return pContext->ThrowNativeError("Client index %d is invalid", params[1]);
@@ -80,8 +82,8 @@ static cell_t sm_GetStatCell(IPluginContext *pContext, const cell_t *params)
 		return 0;
 	}
 
-	int client = gamehelpers->ReferenceToIndex(params[1]);
-	IGamePlayer *pPlayer = playerhelpers->GetGamePlayer(client); /* Man, including GameHelpers and PlayerHelpers for this native :(. */
+	int client = params[1];
+	IGamePlayer *pPlayer = playerhelpers->GetGamePlayer(client);
 	if (pPlayer == NULL || pPlayer->IsConnected() == false)
 	{
 		return pContext->ThrowNativeError("Client index %d is invalid", params[1]);
